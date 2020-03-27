@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        label 'docker'
+    }
     environment { 
         LOCAL_IMAGE = "${JOB_ID}:${BUILD_ID}"
         GITHUB_ACCOUNT = credentials('github-credentials')
