@@ -21,7 +21,7 @@ pipeline {
         stage('publish') {
             steps {
                 sh "docker tag ${LOCAL_IMAGE} ${REMOTE_IMAGE}"
-                sh "docker login docker.pkg.github.com -u ${GITHUB_ACCOUNT_USR} -p ${GITHUB_ACCOUNT_PWD}"
+                sh "docker login docker.pkg.github.com -u ${GITHUB_ACCOUNT_USR} -p ${GITHUB_ACCOUNT_PSW}"
                 sh "docker push ${REMOTE-IMAGE}"
             }
         }
