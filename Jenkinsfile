@@ -3,9 +3,9 @@ pipeline {
         label 'docker'
     }
     environment { 
-        LOCAL_IMAGE = "${JOB_ID}:${BUILD_ID}"
+        LOCAL_IMAGE = "${JOB_NAME}:${BUILD_ID}"
         GITHUB_ACCOUNT = credentials('github-credentials')
-        REMOTE_IMAGE = "docker.pkg.github.com/${GITHUB_ACCOUNT_USR}/ansible-control-node/${LOCAL_IMAGE}"
+        REMOTE_IMAGE = "docker.pkg.github.com/${GITHUB_ACCOUNT_USR}/${JOB_NAME}/${LOCAL_IMAGE}"
     }
     stages {
        stage('build') {
