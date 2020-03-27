@@ -15,7 +15,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh "docker run -it ${LOCAL_IMAGE} ansible --version"
+                sh "docker run -i ${LOCAL_IMAGE} ansible --version"
             }
         }
         stage('publish') {
